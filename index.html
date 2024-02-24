@@ -87,6 +87,13 @@ section p {
     margin-right: auto;
 }
 
+.widget img {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 50%; /* Make it circular */
+    margin-bottom: 10px; /* Add some space between image and text */
+}
+
 /* Footer styles */
 footer {
     background-color: #1a1a1a; /* Dark gray */
@@ -116,6 +123,7 @@ body::-webkit-scrollbar-thumb {
         transform: translateY(0);
     }
 }
+
 </style>
 </head>
 <body>
@@ -147,7 +155,7 @@ body::-webkit-scrollbar-thumb {
             <h2 class="widget-header" onclick="toggleWidget('features')">Features</h2>
             <div class="widget-content" id="features-content">
                 <p>Discover the amazing features of our Minecraft server:</p>
-                <ul>
+                <ul style="list-style-type: none;"> <!-- Remove list-style -->
                     <li>Custom Plugins</li>
                     <li>Active Community</li>
                     <li>Events and Tournaments</li>
@@ -163,14 +171,16 @@ body::-webkit-scrollbar-thumb {
             <h2 class="widget-header" onclick="toggleWidget('staff')">Staff</h2>
             <div class="widget-content" id="staff-content">
                 <div class="widget">
+                    <img src="staff_member_1.jpg" alt="Staff Member 1">
                     <h3>Staff Member 1</h3>
                     <p>Position: Moderator</p>
-                    <p id="time1"></p>
+                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
                 <div class="widget">
+                    <img src="staff_member_2.jpg" alt="Staff Member 2">
                     <h3>Staff Member 2</h3>
                     <p>Position: Admin</p>
-                    <p id="time2"></p>
+                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
                 <!-- Add more staff widgets as needed -->
             </div>
@@ -180,7 +190,7 @@ body::-webkit-scrollbar-thumb {
 
 <footer>
     <div class="container">
-        <p>&copy; 2023 Peach Minecraft Server. All rights reserved.</p>
+        <p>&copy; Peach. Owned by solarskripts.</p>
     </div>
 </footer>
 
@@ -189,18 +199,8 @@ function toggleWidget(widgetId) {
     const widget = document.getElementById(widgetId + '-content');
     widget.classList.toggle('show-widget');
 }
-
-function updateTime() {
-    const now = new Date();
-    const time1 = now.toLocaleTimeString();
-    const time2 = now.toLocaleTimeString();
-    document.getElementById('time1').innerText = 'Current Time: ' + time1;
-    document.getElementById('time2').innerText = 'Current Time: ' + time2;
-}
-
-// Update time every second
-setInterval(updateTime, 1000);
 </script>
 
 </body>
 </html>
+
