@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peach Minecraft Server</title>
+<style>
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Default background color */
+    color: #333; /* Default text color */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode/light mode */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header styles */
+header {
+    background-color: #ff69b4; /* Peach color */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.toggle-container span {
+    font-size: 14px;
+    margin: 0 10px;
+}
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Main content styles */
+main {
+    padding: 20px 0;
+}
+
+section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 20px;
+}
+
+section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+section ul li {
+    margin-bottom: 10px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #ff69b4; /* Peach color */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Peach Minecraft Server</h1>
+        <div class="toggle-container">
+            <span>Dark Mode</span>
+            <label class="toggle">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider"></span>
+            </label>
+            <span>Light Mode</span>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section id="home">
+        <div class="container">
+            <h2>Welcome to Peach Minecraft Server</h2>
+            <p>Join our vibrant community and explore our Minecraft world!</p>
+            <a href="#features" class="btn">Explore Features</a>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2>Features</h2>
+            <ul>
+                <li>Custom Plugins</li>
+                <li>Active Community</li>
+                <li>Events and Tournaments</li>
+                <li>Player Shops</li>
+                <li>Quests and Challenges</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="rules">
+        <div class="container">
+            <h2>Rules</h2>
+            <ul>
+                <li>No Griefing</li>
+                <li>Respect All Players</li>
+                <li>No Cheating or Hacking</li>
+                <li>Follow Staff Instructions</li>
+                <li>Keep Chat Friendly</li>
+            </ul>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2023 Peach Minecraft Server. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+const darkModeToggle = document.getElementById("darkModeToggle");
+
+darkModeToggle.addEventListener("change", function() {
+    document.body.classList.toggle("dark-mode");
+});
+</script>
+</body>
+</html>
