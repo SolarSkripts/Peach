@@ -10,8 +10,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #36393f; /* Dark mode background color */
+    background-color: #0e0e0e; /* Dark mode background color */
     color: #fff; /* Text color */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .container {
@@ -21,7 +22,7 @@ body {
 
 /* Header styles */
 header {
-    background-color: #5865f2; /* Discord-like color */
+    background-color: #1a1a1a; /* Dark gray */
     padding: 20px 0;
     text-align: center;
 }
@@ -30,11 +31,12 @@ header h1 {
     margin: 0;
     font-size: 2rem;
     color: #fff;
+    letter-spacing: 2px;
 }
 
 /* Navigation styles */
 nav {
-    background-color: #5865f2; /* Discord-like color */
+    background-color: #1a1a1a; /* Dark gray */
     padding: 10px 0;
     text-align: center;
 }
@@ -49,7 +51,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #7289da;
+    background-color: #282828; /* Darker gray */
 }
 
 /* Main content styles */
@@ -66,22 +68,19 @@ section h2 {
     margin-bottom: 20px;
     font-size: 2rem;
     color: #fff;
+    letter-spacing: 1px;
+    animation: fadeInUp 1s ease-out;
 }
 
-section ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-section ul li {
-    margin-bottom: 10px;
+section p {
     font-size: 1.2rem;
     color: #fff;
+    animation: fadeInUp 1s ease-out;
 }
 
 /* Footer styles */
 footer {
-    background-color: #5865f2; /* Discord-like color */
+    background-color: #1a1a1a; /* Dark gray */
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -93,26 +92,15 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: #7289da; /* Discord-like color */
+    background-color: #282828; /* Darker gray */
     border-radius: 4px;
 }
 
 /* Animations */
-@keyframes fadeIn {
+@keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -150,6 +138,7 @@ body::-webkit-scrollbar-thumb {
     <section id="features">
         <div class="container">
             <h2>Features</h2>
+            <p>Discover the amazing features of our Minecraft server:</p>
             <ul>
                 <li>Custom Plugins</li>
                 <li>Active Community</li>
@@ -163,6 +152,7 @@ body::-webkit-scrollbar-thumb {
     <section id="rules">
         <div class="container">
             <h2>Rules</h2>
+            <p>Our server rules ensure a fair and enjoyable experience:</p>
             <ul>
                 <li>No Griefing</li>
                 <li>Respect All Players</li>
@@ -179,34 +169,6 @@ body::-webkit-scrollbar-thumb {
         <p>&copy; 2023 Peach Minecraft Server. All rights reserved.</p>
     </div>
 </footer>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const sections = document.querySelectorAll("section");
-    sections.forEach(section => {
-        if (isElementInViewport(section)) {
-            section.classList.add("show");
-        }
-    });
-    window.addEventListener("scroll", function() {
-        sections.forEach(section => {
-            if (isElementInViewport(section)) {
-                section.classList.add("show");
-            }
-        });
-    });
-});
-
-function isElementInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
-</script>
 
 </body>
 </html>
