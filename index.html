@@ -7,7 +7,7 @@
 <style>
 /* Global styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #0e0e0e; /* Dark mode background color */
@@ -29,7 +29,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 3rem;
+    font-size: 2rem;
     color: #fff;
     letter-spacing: 2px;
 }
@@ -66,28 +66,15 @@ section {
 
 section h2 {
     margin-bottom: 20px;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #fff;
     letter-spacing: 1px;
-    animation: fadeInUp 1s ease-out;
+    cursor: pointer; /* Add pointer cursor for clickable elements */
 }
 
 section p {
     font-size: 1.2rem;
     color: #fff;
-    animation: fadeInUp 1s ease-out;
-}
-
-section ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-section ul li {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    color: #fff;
-    animation: fadeInUp 1s ease-out;
 }
 
 /* Footer styles */
@@ -135,6 +122,7 @@ body::-webkit-scrollbar-thumb {
         <a href="#home">Home</a>
         <a href="#features">Features</a>
         <a href="#rules">Rules</a>
+        <a href="#staff">Staff</a>
     </div>
 </nav>
 
@@ -149,38 +137,65 @@ body::-webkit-scrollbar-thumb {
 
     <section id="features">
         <div class="container">
-            <h2>Features</h2>
-            <p>Discover the amazing features of our Minecraft server:</p>
-            <ul>
-                <li>Custom Plugins</li>
-                <li>Active Community</li>
-                <li>Events and Tournaments</li>
-                <li>Player Shops</li>
-                <li>Quests and Challenges</li>
-            </ul>
+            <h2 class="widget-header" onclick="toggleWidget('features')">Features</h2>
+            <div class="widget-content" id="features-content">
+                <p>Discover the amazing features of our Minecraft server:</p>
+                <ul>
+                    <li>Custom Plugins</li>
+                    <li>Active Community</li>
+                    <li>Events and Tournaments</li>
+                    <li>Player Shops</li>
+                    <li>Quests and Challenges</li>
+                </ul>
+            </div>
         </div>
     </section>
 
     <section id="rules">
         <div class="container">
-            <h2>Rules</h2>
-            <p>Our server rules ensure a fair and enjoyable experience:</p>
-            <ul>
-                <li>No Griefing</li>
-                <li>Respect All Players</li>
-                <li>No Cheating or Hacking</li>
-                <li>Follow Staff Instructions</li>
-                <li>Keep Chat Friendly</li>
-            </ul>
+            <h2 class="widget-header" onclick="toggleWidget('rules')">Rules</h2>
+            <div class="widget-content" id="rules-content">
+                <p>Our server rules ensure a fair and enjoyable experience:</p>
+                <ul>
+                    <li>No Griefing</li>
+                    <li>Respect All Players</li>
+                    <li>No Cheating or Hacking</li>
+                    <li>Follow Staff Instructions</li>
+                    <li>Keep Chat Friendly</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="staff">
+        <div class="container">
+            <h2 class="widget-header" onclick="toggleWidget('staff')">Staff</h2>
+            <div class="widget-content" id="staff-content">
+                <p>Meet our dedicated staff members:</p>
+                <ul>
+                    <li>Staff Member 1</li>
+                    <li>Staff Member 2</li>
+                    <li>Staff Member 3</li>
+                    <li>Staff Member 4</li>
+                    <li>Staff Member 5</li>
+                </ul>
+            </div>
         </div>
     </section>
 </main>
 
 <footer>
     <div class="container">
-        <p>&copy; 2023 Peach Minecraft Server. All rights reserved.</p>
+        <p>&copy; 2023 Peach. Owned by Solarskripts studios.</p>
     </div>
 </footer>
+
+<script>
+function toggleWidget(widgetId) {
+    const widget = document.getElementById(widgetId + '-content');
+    widget.classList.toggle('show-widget');
+}
+</script>
 
 </body>
 </html>
