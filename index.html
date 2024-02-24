@@ -10,7 +10,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #111; /* Dark mode background color */
+    background-color: #2f3136; /* Dark mode background color */
     color: #fff; /* Text color */
     transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode/light mode */
 }
@@ -22,7 +22,7 @@ body {
 
 /* Header styles */
 header {
-    background-color: #ff69b4; /* Peach color */
+    background-color: #7289da; /* Discord-like color */
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -35,60 +35,27 @@ header {
 
 header h1 {
     margin: 0;
+    font-size: 2.5rem;
 }
 
-.toggle-container {
+/* Navigation styles */
+nav {
     display: flex;
-    align-items: center;
     justify-content: center;
+    margin-top: 20px;
 }
 
-.toggle-container span {
-    font-size: 14px;
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
     margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.toggle {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-.toggle input {
-    display: none;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: #fff;
-    transition: 0.4s;
-    border-radius: 50%;
-}
-
-input:checked + .slider {
-    background-color: #2196F3;
-}
-
-input:checked + .slider:before {
-    transform: translateX(26px);
+nav a:hover {
+    background-color: #5f73b6;
 }
 
 /* Main content styles */
@@ -111,6 +78,7 @@ section.show {
 
 section h2 {
     margin-bottom: 20px;
+    font-size: 2rem;
 }
 
 section ul {
@@ -120,14 +88,29 @@ section ul {
 
 section ul li {
     margin-bottom: 10px;
+    font-size: 1.2rem;
 }
 
 /* Footer styles */
 footer {
-    background-color: #ff69b4; /* Peach color */
+    background-color: #7289da; /* Discord-like color */
     color: #fff;
     padding: 20px 0;
     text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #7289da;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #5f73b6;
 }
 
 /* Animations */
@@ -148,15 +131,12 @@ footer {
 <header>
     <div class="container">
         <h1>Peach Minecraft Server</h1>
-        <div class="toggle-container">
-            <span>Dark Mode</span>
-            <label class="toggle">
-                <input type="checkbox" id="darkModeToggle" checked>
-                <span class="slider"></span>
-            </label>
-            <span>Light Mode</span>
-        </div>
     </div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#rules">Rules</a>
+    </nav>
 </header>
 
 <main>
@@ -202,12 +182,6 @@ footer {
 </footer>
 
 <script>
-const darkModeToggle = document.getElementById("darkModeToggle");
-
-darkModeToggle.addEventListener("change", function() {
-    document.body.classList.toggle("dark-mode");
-});
-
 document.addEventListener("DOMContentLoaded", function() {
     const sections = document.querySelectorAll("section");
     sections.forEach(section => {
