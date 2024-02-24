@@ -77,6 +77,16 @@ section p {
     color: #fff;
 }
 
+.widget {
+    background-color: #262626; /* Slightly lighter color for widgets */
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Footer styles */
 footer {
     background-color: #1a1a1a; /* Dark gray */
@@ -106,7 +116,6 @@ body::-webkit-scrollbar-thumb {
         transform: translateY(0);
     }
 }
-
 </style>
 </head>
 <body>
@@ -120,8 +129,6 @@ body::-webkit-scrollbar-thumb {
 <nav>
     <div class="container">
         <a href="#home">Home</a>
-        <a href="#features">Features</a>
-        <a href="#rules">Rules</a>
         <a href="#staff">Staff</a>
     </div>
 </nav>
@@ -151,34 +158,21 @@ body::-webkit-scrollbar-thumb {
         </div>
     </section>
 
-    <section id="rules">
-        <div class="container">
-            <h2 class="widget-header" onclick="toggleWidget('rules')">Rules</h2>
-            <div class="widget-content" id="rules-content">
-                <p>Our server rules ensure a fair and enjoyable experience:</p>
-                <ul>
-                    <li>No Griefing</li>
-                    <li>Respect All Players</li>
-                    <li>No Cheating or Hacking</li>
-                    <li>Follow Staff Instructions</li>
-                    <li>Keep Chat Friendly</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
     <section id="staff">
         <div class="container">
             <h2 class="widget-header" onclick="toggleWidget('staff')">Staff</h2>
             <div class="widget-content" id="staff-content">
-                <p>Meet our dedicated staff members:</p>
-                <ul>
-                    <li>Staff Member 1</li>
-                    <li>Staff Member 2</li>
-                    <li>Staff Member 3</li>
-                    <li>Staff Member 4</li>
-                    <li>Staff Member 5</li>
-                </ul>
+                <div class="widget">
+                    <h3>Staff Member 1</h3>
+                    <p>Position: Moderator</p>
+                    <p id="time1"></p>
+                </div>
+                <div class="widget">
+                    <h3>Staff Member 2</h3>
+                    <p>Position: Admin</p>
+                    <p id="time2"></p>
+                </div>
+                <!-- Add more staff widgets as needed -->
             </div>
         </div>
     </section>
@@ -186,7 +180,7 @@ body::-webkit-scrollbar-thumb {
 
 <footer>
     <div class="container">
-        <p>&copy; 2023 Peach. Owned by Solarskripts studios.</p>
+        <p>&copy; 2023 Peach Minecraft Server. All rights reserved.</p>
     </div>
 </footer>
 
@@ -195,6 +189,17 @@ function toggleWidget(widgetId) {
     const widget = document.getElementById(widgetId + '-content');
     widget.classList.toggle('show-widget');
 }
+
+function updateTime() {
+    const now = new Date();
+    const time1 = now.toLocaleTimeString();
+    const time2 = now.toLocaleTimeString();
+    document.getElementById('time1').innerText = 'Current Time: ' + time1;
+    document.getElementById('time2').innerText = 'Current Time: ' + time2;
+}
+
+// Update time every second
+setInterval(updateTime, 1000);
 </script>
 
 </body>
